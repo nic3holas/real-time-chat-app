@@ -1,0 +1,20 @@
+.foot{
+    background-color: blue;
+    margin-top: 5px;
+}
+li{
+    text-decoration: none;
+    color:white;
+
+}
+li p{
+    padding-bottom: 0%;
+
+}
+.list{
+    padding-left: 40%;
+}
+li a{
+    color: white;
+    text-decoration: none;
+}

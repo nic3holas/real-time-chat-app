@@ -1,0 +1,15 @@
+.notification{
+    height: 30px;
+}
+.notification .time{
+    float: right;
+}
+.notification .count{
+    padding-left: 10px;
+}
+
+@media screen and (max-width:480px) {
+    .notification{
+        height: 50px;
+    }
+}

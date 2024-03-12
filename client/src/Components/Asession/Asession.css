@@ -1,0 +1,23 @@
+.sessions{
+    background-color: rgb(187, 218, 228);
+    max-height: 110px;
+    width: 100%;
+}
+.student{
+    font-size: 20px;
+    font-weight: 700;
+    font-family: 'Times New Roman', Times, serif;
+    padding-bottom: 0%;
+}
+.time{
+    color: #8899ac;
+    font-size: 14px;
+    font-family: 'Times New Roman', Times, serif;
+    padding-left: 10%;
+    width: 40%;
+}
+.description{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 17px;
+    color: green;
+}

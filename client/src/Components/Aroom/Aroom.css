@@ -1,0 +1,7 @@
+.App .joinChat input{
+    width: 80%;
+
+}
+.joinChat button{
+    background-color: lightgreen;
+}

@@ -1,0 +1,66 @@
+
+.my-links{
+    background-color: blue;
+}
+.logo p{
+    color: blue;
+    font-size: 25px;
+    font-weight: bolder;
+    margin-top: 2px;
+    margin-bottom: 4px;
+}
+.logo img{
+    width: 300px;
+    
+}
+ul{
+    margin-left: 40%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    
+    
+}
+li .links{
+    float: left;
+    text-decoration: none;
+    padding: 8px;
+    font-size: 25px;
+    color: white;
+  }
+li{
+    display: inline;  
+}
+li .links:hover{
+    background-color: darkslategrey;
+}
+
+.dropdwn{
+    display: none;
+}
+.logo .welcome{
+    color: blue;
+}
+@media screen and (max-width: 480px) {
+    .my-links{
+        display: none;
+    }
+    .dropdwn{
+        display: block;
+        z-index: 2000;
+    }
+    .dropdwn .links{
+        text-decoration: none;
+        padding-left: 10px;
+        font-size: 20px;
+        color: blue;
+    }
+    .dropdwn button{
+        color: white;
+        background-color: blue;
+        font-size: 25px;
+    }
+    .menubtn {
+        background-color: blue;
+    }
+}

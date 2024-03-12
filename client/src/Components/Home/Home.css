@@ -1,0 +1,10 @@
+.home-page img{
+    width: 500px;
+    margin-left: 28%;
+}
+@media screen and (max-width: 480px) {
+    .home-page img{
+        width: 100%;
+        margin-left: 0%;
+    }
+  }

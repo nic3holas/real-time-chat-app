@@ -1,0 +1,27 @@
+.video-container{
+    width: 70%;
+    margin-left: 7%;
+    height: 30%;
+    margin-top: 2%;
+    border-radius: 10px;
+}
+.video-container img{
+    
+    margin-top: 0%;
+}
+.video-container video{
+    max-height: 300px;
+    border-radius: 15px;
+}
+.end-call{
+    width: 150px;
+    padding-left: 0;
+}
+.end-video{
+    width: 100px;
+}
+.start-video{
+    width: 80px;
+    margin-right: 10%;
+    margin-left: 18%;
+}

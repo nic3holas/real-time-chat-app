@@ -1,0 +1,109 @@
+.chat-window .body{
+    margin-top: 125px;
+    margin-bottom: 10%;
+    height: 100%;
+    position: relative;
+}
+.head{
+    width: 100%;
+    height: 120px;
+    background-color: blue;
+    position: fixed;
+    top: 0%;
+    z-index: 1000;
+}
+.sender-icon{
+    width: 35px;
+}
+.sender-name{
+    font-size: 18px;
+    color: white;
+    font-weight: bold;
+
+}
+.sender-state{
+    color: white;
+    font-weight: 400;
+}
+.video-icon{
+    width: 50px;
+    padding-left: 3px;
+}
+
+.time-sent{
+    font-size: 12px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: blue;
+}
+
+
+.footer{
+    position: fixed;
+    width: 100%;
+    bottom: 0%;
+    background-color: white;
+    padding-bottom: 2%;
+}
+ .footer input{
+    width: 90%;
+    height: 40px;
+    margin-left: 8%;
+    border-radius: 20px;
+    padding: 2px;
+    
+    
+}
+.footer .send-button{
+    width: 120px;
+    padding-left: 5px;
+}
+table{
+    width: 100%;
+}
+
+#you {
+    margin-left: 48% ;
+    margin-bottom: 2%;
+}
+#you .message-content {
+    background-color: aquamarine;
+    border-radius: 20px 0px 20px 20px;
+    padding: 2px;
+    font-family: 'Times New Roman', Times, serif;
+}
+#other {
+    margin-left: 1%;
+    margin-bottom: 2%;
+} 
+#other .message-content{
+    justify-content: flex-start;
+    background-color: cornflowerblue;
+    border-radius: 0px 20px 20px 20px;
+    padding: 2px;
+    font-family: 'Times New Roman', Times, serif;
+}
+.message {
+    max-width: 50%;
+    height: auto;
+}
+#you .author{
+    font-size: 16px;
+    color: #8899ac;
+}
+#other .author{
+    font-size: 16px;
+    color: white;
+}
+.message .message-content{
+    padding-left: 1.5%;
+    width: 100%;
+}
+.chat-window .body .message-container{
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+.chat-window .body .message-container::-webkit-scrollbar{
+    display: none;
+}

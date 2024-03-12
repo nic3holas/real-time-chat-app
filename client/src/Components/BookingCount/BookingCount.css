@@ -1,0 +1,9 @@
+.bookingcount{
+    width: 20%;
+    height: 25%;
+    background-color: gray;
+    color: blue;
+    padding: 2%;
+    margin-left: 35%;
+    border-radius: 15px;
+}

@@ -1,0 +1,23 @@
+.bookings{
+    width: 100%;
+    max-height: 100px;
+    background-color: lightblue;
+    padding-bottom: 3px;
+    padding-left: 3px;
+    margin-bottom: 0.5%;
+    
+}
+.student-name{
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bolder;
+    
+}
+.timestamp{
+    color: #8899ac;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 200;
+    font-size: 13px;
+}
+.link{
+    text-decoration: none;
+}

@@ -1,0 +1,48 @@
+.book{
+    width: 50%;
+
+}
+.book h4{
+    color: blue;
+    padding: 5px;
+}
+.inputfields{
+    padding: 5px;
+}
+.inputfields input{
+    width: 60%;
+}
+.inputfields textarea{
+    width: 60%;
+}
+.book button{
+    background-color: blue;
+    border: 0;
+    border-radius: 5px;
+    height: 30px;
+    width: 50%;
+    color: white;
+    margin-left: 10%;
+}
+
+@media screen and (max-width:480px) {
+    .book{
+        width: 100%;
+        padding-bottom: 3%;
+    }
+    .inputfields input{
+        width: 95%;
+        padding-left: 2%;
+        margin-left: 2%;
+    }
+    .inputfields textarea{
+        width: 95%;
+        margin-left: 2%;
+    }
+    .book button{
+        width: 70%;
+        height: 40px;
+        margin-left: 15%;
+    }
+    
+}
