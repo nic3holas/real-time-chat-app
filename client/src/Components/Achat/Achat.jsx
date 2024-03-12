@@ -7,7 +7,7 @@ import video from "./video.png"
 import { NavLink } from "react-router-dom"
 import ScrollToBottom from "react-scroll-to-bottom"
 
-const Achat = () => {
+const Achat = ({socket}) => {
   //const socket = io.connect("http://localhost:5000")
   const [currentMessage, setCurrentMessage] = useState("")
   const [messageList, setMessageList] = useState([])

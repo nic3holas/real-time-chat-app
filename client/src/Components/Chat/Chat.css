@@ -36,18 +36,19 @@ tr .sender-icon{
 .chatt{
     margin-top: 3px;
 }
-#you {
-    margin-left: 48% ;
-    margin-bottom: 2%;
+#you .message-container {
+    margin-left: 8% ;
+    margin-bottom: 0%;
 }
 #you .message-content {
     background-color: aquamarine;
     border-radius: 20px 0px 20 20px;
     padding: 2px;
     font-family: 'Times New Roman', Times, serif;
+    
 }
-#other {
-    margin-left: 1%;
+.message-container #other {
+    margin-left: 5%;
     margin-bottom: 2%;
 } 
 #other .message-content{
@@ -56,8 +57,9 @@ tr .sender-icon{
     border-radius: 0px 20px 20px 20px;
     padding: 2px;
     font-family: 'Times New Roman', Times, serif;
+   
 }
-.message {
+.message-container {
     max-width: 50%;
     height: auto;
 }
@@ -76,13 +78,13 @@ tr .sender-icon{
     height: 100%;
     overflow: hidden;
 }
-.chat-window .body .message-container{
+.chat-window .body .message-scroll{
     width: 100%;
     height: 100%;
     overflow-y: scroll;
     overflow-x: hidden;
 }
-.chat-window .body .message-container::-webkit-scrollbar{
+.body .message-scroll::-webkit-scrollbar{
     display: none;
 }
 .chat-window .body{

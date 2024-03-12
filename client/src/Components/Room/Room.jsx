@@ -3,9 +3,10 @@ import io from 'socket.io-client'
 import './Room.css'
 import Chat from "../Chat/Chat"
 
-//const socket = io.connect("http://localhost:5000")
-const myroom = 123
+const socket = io.connect("http://192.168.43.213:5000")
+
 const Room = () => {
+ 
     const [username, setUsername] = useState("")
     const [room, setRoom] = useState("")
     const [showChat, setShowChat] = useState(false)
@@ -22,7 +23,9 @@ const Room = () => {
       <div className='joinChat'>
       <h3>Join a chat</h3>
       <input type='text' placeholder='John...' onChange={(event) => {setUsername(event.target.value)}}/> <br/><br/>
-      <input type='text' placeholder='Room id...' onChange={(event) => {setRoom(event.target.value)}}/><br/><br/>
+      <input type='text' placeholder='Room id...' onChange={(event) => {setRoom(event.target.value)}} onKeyDown={(event) => {
+                  event.key === "Enter" && joinRoom();
+                }}/><br/><br/>
       <button onClick={joinRoom}>Join a room</button>
       </div> )
       

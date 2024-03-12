@@ -3,7 +3,7 @@ import io from 'socket.io-client'
 import './Aroom.css'
 import Achat from "../Achat/Achat"
 
-//const socket = io.connect("http://localhost:3004")
+const socket = io.connect("http://localhost:5000")
 
 const Aroom = () => {
     const [username, setUsername] = useState("")

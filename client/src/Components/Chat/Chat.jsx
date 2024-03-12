@@ -8,10 +8,30 @@ import { NavLink } from "react-router-dom"
 import ScrollToBottom from "react-scroll-to-bottom"
 import back from './back.png'
 
-//const socket = io.connect("http://localhost:3001")
-const Chat = () => {
- 
-  
+const Chat = ({socket,room,username}) => {
+  const[currentMessage, setCurrentMessage] = useState("")
+ const[messageList, setMessageList] = useState([])
+
+  const sendMessage = async () =>{
+    if(currentMessage !== "") {
+      const messageData = {
+        room: room,
+        author: username,
+        message: currentMessage,
+        time: new Date(Date.now()).getHours() +":"+ new Date(Date.now()).getMinutes()
+      }
+      await socket.emit("send_message", messageData)
+      setMessageList((list)=>[...list, messageData])
+      setCurrentMessage("")
+    }
+  }
+
+  useEffect(()=>{
+    socket.on("receive_message", (data)=>{
+      setMessageList((list)=>[...list, data])
+      
+    })
+  },[socket])
   return (
     <div className="chat-window">
       <>
@@ -37,11 +57,13 @@ const Chat = () => {
           </table>
         </div>
 
+        
         <div className="body">
-            
+          <ScrollToBottom className="message-scroll">
+        {messageList.map((messageContent, index) => (
               <div
                 key={index}
-                className="message"
+                className="message-container"
                 id={username === messageContent.author ? "you" : "other"}
               >
                 <div>
@@ -52,8 +74,10 @@ const Chat = () => {
                   </div>
                 </div>
               </div>
-            
+               ))}
+               </ScrollToBottom>
         </div>
+        
       </>
 
       <div className="footer">
