@@ -7,7 +7,7 @@ const Abooking = () => {
     return(
         <div>
             <Anavbar/>
-            <NavLink to="/Achat" activeClassName="active" className="link">
+            <NavLink to="/Aroom" activeClassName="active" className="link">
             <div className="bookings">
                <table>
                 <tr>

@@ -11,6 +11,18 @@ import back from './back.png'
 const Chat = ({socket,room,username}) => {
   const[currentMessage, setCurrentMessage] = useState("")
  const[messageList, setMessageList] = useState([])
+ const[typing, setTyping]= useState("")
+
+ // In your React component
+const handleTyping = (event) => {
+  if (event.target.value !== '') {
+    let status = "is typing..."
+    socket.emit('typing', { room, username, status });
+  } else {
+    let status = ""
+    socket.emit('stop_typing', { room, username, status });
+  }
+};
 
   const sendMessage = async () =>{
     if(currentMessage !== "") {
@@ -29,9 +41,44 @@ const Chat = ({socket,room,username}) => {
   useEffect(()=>{
     socket.on("receive_message", (data)=>{
       setMessageList((list)=>[...list, data])
-      
     })
+
+   
   },[socket])
+useEffect(()=>{
+  let typingTimeout;
+
+  socket.on('usertyping', (data) => {
+   
+    setTyping(data);
+
+    // Clear typing status after 3 seconds (adjust as needed)
+    clearTimeout(typingTimeout);
+    typingTimeout = setTimeout(() => {
+      setTyping("");
+    }, 300);
+},[socket])})
+ /* Listen for typing events
+useEffect(() => {
+  let typingTimeout;
+
+  socket.on('usertyping', (data) => {
+   
+    setTyping(data.status);
+
+    // Clear typing status after 3 seconds (adjust as needed)
+    clearTimeout(typingTimeout);
+    typingTimeout = setTimeout(() => {
+      setTyping("");
+    }, 2000);
+  });
+
+  return () => {
+    socket.off('typing');
+    clearTimeout(typingTimeout);
+  };
+}, [socket]);*/
+
   return (
     <div className="chat-window">
       <>
@@ -47,6 +94,8 @@ const Chat = ({socket,room,username}) => {
               <td className="sender">
                 <p className="sender-name">Admin</p>
                 <p className="sender-state">Online</p>
+                <span>{typing.username} {typing.status}</span>
+                
               </td>
               <td>
                 <NavLink to="/Video" activeClassName="active">
@@ -59,6 +108,7 @@ const Chat = ({socket,room,username}) => {
 
         
         <div className="body">
+       
           <ScrollToBottom className="message-scroll">
         {messageList.map((messageContent, index) => (
               <div
@@ -84,15 +134,20 @@ const Chat = ({socket,room,username}) => {
         <table>
           <tr>
             <td className="input-message">
+           
               <input
                 type="text"
                 value={currentMessage}
                 placeholder="Type message..."
-                onChange={(event) => setCurrentMessage(event.target.value)}
+                onChange={(event) =>{
+                  setCurrentMessage(event.target.value)
+                  handleTyping(event)
+                }}
                 onKeyDown={(event) => {
                   event.key === "Enter" && sendMessage();
                 }}
               />
+             
             </td>
             <td className="send-button">
               <img src={send} alt="send message" onClick={sendMessage} />

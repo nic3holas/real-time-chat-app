@@ -3,7 +3,7 @@ import io from 'socket.io-client'
 import './Room.css'
 import Chat from "../Chat/Chat"
 
-const socket = io.connect("http://192.168.43.213:5000")
+const socket = io.connect("http://192.168.170.66:5000")
 
 const Room = () => {
  

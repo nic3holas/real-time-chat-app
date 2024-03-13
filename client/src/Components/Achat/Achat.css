@@ -1,50 +1,55 @@
-.chat-window .body{
+.achat-window .abody{
     margin-top: 125px;
     margin-bottom: 10%;
     height: 100%;
     position: relative;
 }
-.head{
+.ahead{
     width: 100%;
-    height: 120px;
-    background-color: blue;
+    height: 128px;
+    background-color: teal;
     position: fixed;
     top: 0%;
     z-index: 1000;
 }
-.sender-icon{
+.asender-icon{
     width: 35px;
 }
-.sender-name{
+.asender-name{
     font-size: 18px;
     color: white;
     font-weight: bold;
 
 }
-.sender-state{
+.asender-state{
     color: white;
     font-weight: 400;
 }
-.video-icon{
+.asender-typing{
+    color: white;
+    font-size: 14px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.avideo-icon{
     width: 50px;
     padding-left: 3px;
 }
 
-.time-sent{
+.atime-sent{
     font-size: 12px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     color: blue;
 }
 
 
-.footer{
+.afooter{
     position: fixed;
     width: 100%;
     bottom: 0%;
     background-color: white;
     padding-bottom: 2%;
 }
- .footer input{
+ .afooter input{
     width: 90%;
     height: 40px;
     margin-left: 8%;
@@ -53,7 +58,7 @@
     
     
 }
-.footer .send-button{
+.afooter .asend-button{
     width: 120px;
     padding-left: 5px;
 }
@@ -65,7 +70,7 @@ table{
     margin-left: 48% ;
     margin-bottom: 2%;
 }
-#you .message-content {
+#you .amessage-content {
     background-color: aquamarine;
     border-radius: 20px 0px 20px 20px;
     padding: 2px;
@@ -74,36 +79,40 @@ table{
 #other {
     margin-left: 1%;
     margin-bottom: 2%;
+    width: 50%;
 } 
-#other .message-content{
+#other .amessage-content{
     justify-content: flex-start;
     background-color: cornflowerblue;
     border-radius: 0px 20px 20px 20px;
     padding: 2px;
     font-family: 'Times New Roman', Times, serif;
 }
-.message {
-    max-width: 50%;
-    height: auto;
-}
-#you .author{
+
+#you .aauthor{
     font-size: 16px;
     color: #8899ac;
 }
-#other .author{
+#other .aauthor{
     font-size: 16px;
     color: white;
 }
-.message .message-content{
+.amessage .amessage-content{
     padding-left: 1.5%;
     width: 100%;
 }
-.chat-window .body .message-container{
+
+.achat-window .abody .amessage-scroll{
     width: 100%;
     height: 100%;
     overflow-y: scroll;
     overflow-x: hidden;
 }
-.chat-window .body .message-container::-webkit-scrollbar{
+.abody .amessage-scroll::-webkit-scrollbar{
     display: none;
+}
+.achat-window .abody{
+    height: 342px;
+    overflow-y: auto;
+    
 }

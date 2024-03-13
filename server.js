@@ -30,6 +30,22 @@ io.on("connection", (socket)=> {
     socket.to(data.room).emit("receive_message", data)
   })
 
+  // Handle typing event
+socket.on('typing', (data) => {
+  console.log(`${data.username} in room ${data.room} is ${data.status}`)
+  // Broadcast typing event to other users
+  typing = data.status
+  username = data.username
+  socket.to(data.room).emit("usertyping", data);
+});
+
+// Handle stop typing event
+socket.on('stop_typing', (data) => {
+  // Broadcast stop typing event to other users
+  console.log(data.status)
+  socket.to(data.room).emit('stop_typing', data);
+});
+
   socket.on("disconnect", ()=>{
     console.log('user diconnected')
   })
