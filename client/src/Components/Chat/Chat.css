@@ -101,6 +101,116 @@ tr .sender-icon{
     .sender h2{
         font-size: 20px;
     }
+    td img{
+        width: 40px;
+        margin-right: 0%;
+    }
+    .input-message input{
+        width: 89%;
+        margin-left: 5%;
+        
+        height: 45px;
+        border-radius: 15px;
+    }
+    .inputs{
+        width: 100%;
+        position: fixed;
+        bottom: 1%;
+        z-index: 1000;
+    }
+    .footer{
+        margin-bottom: 0;
+    }
+    tr .sender-icon{
+        width: 40px;
+    }
+    .last-seen {
+        padding-top: 0%;
+    }
+    .head{
+        background-color: blue;
+    }
+    .sender{
+        color: white;
+        position: -webkit-sticky;
+        position: sticky;
+        top: 0;
+        padding: 5px;
+        z-index: 1000;
+        
+    }
+    .video-call{
+        width: 40px;
+    }
+    .chatt{
+        margin-top: 3px;
+    }
+    #you .message-container {
+        margin-left: 8% ;
+        margin-bottom: 0%;
+    }
+    #you .message-content {
+        border-radius: 20px 0px 20px 20px;
+        background-color: aquamarine;
+        padding: 2px;
+        font-size: 15px;
+        font-family: 'Times New Roman', Times, serif;
+        
+    }
+    
+    .message-content .time-sent{
+        color: blue;
+        font-family: 'Times New Roman', Times, serif;
+    }
+    .message-container #other {
+        margin-left: 5%;
+        margin-bottom: 2%;
+    } 
+    #other .message-content{
+        
+        background-color: cornflowerblue;
+        border-radius: 0px 20px 20px 20px;
+        padding: 2px;
+        font-size: 12px;
+        font-family: 'Times New Roman', Times, serif;
+       
+    }
+    .message-container {
+        max-width: 50%;
+        height: auto;
+        
+    }
+    #you .author{
+        font-size: 13px;
+        color: #8899ac;
+    }
+    #other .author{
+        font-size: 13px;
+        color: white;
+    }
+    .message-content{
+        padding-left: 1.5%;
+    }
+    .chat-window {
+        height: 100%;
+        overflow: hidden;
+    }
+    .chat-window .body .message-scroll{
+        width: 100%;
+        height: 100%;
+        overflow-y: scroll;
+        overflow-x: hidden;
+    }
+    .body .message-scroll::-webkit-scrollbar{
+        display: none;
+    }
+    .chat-window .body{
+        height: 100%;
+        overflow-y: auto;
+    }
+    .back-icon{
+        width: 30px;
+    }
     
 
    

@@ -29,7 +29,7 @@ io.on("connection", (socket)=> {
     console.log(`User ${data.author} sent message ${data.message} at ${data.time}`)
     socket.to(data.room).emit("receive_message", data)
   })
-
+ 
   // Handle typing event
 socket.on('typing', (data) => {
   console.log(`${data.username} in room ${data.room} is ${data.status}`)
@@ -53,5 +53,5 @@ socket.on('stop_typing', (data) => {
 
 const PORT = process.env.PORT || 5000
 server.listen(PORT,() => {
-  console.log(`Server is running on http://192.168.43.213:${PORT}`)
+  console.log(`Server is running on http://192.168.182.74:${PORT}`)
 })

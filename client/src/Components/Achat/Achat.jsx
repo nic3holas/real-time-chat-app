@@ -35,51 +35,29 @@ const handleTyping = (event) => {
       await asocket.emit("send_message", messageData)
       setMessageList((list)=>[...list, messageData])
       setCurrentMessage("")
+     
     }
   }
 
   useEffect(()=>{
     asocket.on("receive_message", (data)=>{
       setMessageList((list)=>[...list, data])
+    console.log(data)
     })
 
-   
   },[asocket])
 
   useEffect(()=>{
     let typingTimeout;
-  
     asocket.on('usertyping', (data) => {
-     
       setTyping(data);
-  
       // Clear typing status after 3 seconds (adjust as needed)
       clearTimeout(typingTimeout);
       typingTimeout = setTimeout(() => {
         setTyping("");
       }, 300);
   },[asocket])})
- /* Listen for typing events
-useEffect(() => {
-  let typingTimeout;
-
-  socket.on('usertyping', (data) => {
-    console.log(data.username)
-    setTyping(data);
-
-    // Clear typing status after 3 seconds (adjust as needed)
-    clearTimeout(typingTimeout);
-    typingTimeout = setTimeout(() => {
-      setTyping("");
-    }, 2000);
-  });
-
-  return () => {
-    socket.off('typing');
-    clearTimeout(typingTimeout);
-  };
-}, [socket]);*/
-
+ 
   return (
     <div className="achat-window">
       <>

@@ -18,7 +18,7 @@ const Navbar = () => {
       <div className='logo'>
         <img src={Embuni} alt="" />
         <p>Student Counselling</p>
-        <span className='welcome'>Welcome {username}!</span>
+        <span className='welcome'>Welcome!</span>
       </div>
       <div class="w3-dropdown-hover dropdwn">
         <div className="menubtn">
@@ -30,8 +30,6 @@ const Navbar = () => {
         <NavLink className='links' to="/Room" activeClassName="active"><b>Chat</b></NavLink><br />
         <NavLink className='links' to="/Appointment" activeClassName="active"><b>Appointment</b></NavLink><br />
         <NavLink className='links' to="/Notification" activeClassName="active"><b>Notification</b></NavLink><br />
-        <NavLink className='links' to="/Profile" activeClassName="active"><b>Profile</b></NavLink><br />
-        <NavLink className='links' to="/Login" activeClassName="active"><b>Login</b></NavLink>
         <NavLink className='links' to="/Admin" activeClassName="active"><b>Admin</b></NavLink>
         </div>
        </div>
@@ -40,8 +38,6 @@ const Navbar = () => {
         <li ><NavLink className='links' to="/Room" activeClassName="active">Chat</NavLink></li>
         <li ><NavLink className='links' to="/Appointment" activeClassName="active">Appointment</NavLink></li>
         <li ><NavLink className='links' to="/Notification" activeClassName="active">Notification</NavLink></li>
-        <li ><NavLink className='links' to="/Profile" activeClassName="active">Profile</NavLink></li>
-        <li ><NavLink className='links' to="/Login" activeClassName="active">Login</NavLink></li>
         <li ><NavLink className='links' to="/Admin" activeClassName="active">Admin</NavLink></li>
       
       </ul>

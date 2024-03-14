@@ -7,12 +7,13 @@ import video from "./video.png"
 import { NavLink } from "react-router-dom"
 import ScrollToBottom from "react-scroll-to-bottom"
 import back from './back.png'
+import toast, { Toaster } from "react-hot-toast"
 
 const Chat = ({socket,room,username}) => {
   const[currentMessage, setCurrentMessage] = useState("")
  const[messageList, setMessageList] = useState([])
  const[typing, setTyping]= useState("")
-
+ 
  // In your React component
 const handleTyping = (event) => {
   if (event.target.value !== '') {
@@ -35,53 +36,32 @@ const handleTyping = (event) => {
       await socket.emit("send_message", messageData)
       setMessageList((list)=>[...list, messageData])
       setCurrentMessage("")
+      
     }
   }
 
   useEffect(()=>{
     socket.on("receive_message", (data)=>{
       setMessageList((list)=>[...list, data])
+     console.log(data)
     })
-
-   
   },[socket])
 useEffect(()=>{
   let typingTimeout;
-
   socket.on('usertyping', (data) => {
-   
     setTyping(data);
-
     // Clear typing status after 3 seconds (adjust as needed)
     clearTimeout(typingTimeout);
     typingTimeout = setTimeout(() => {
       setTyping("");
     }, 300);
 },[socket])})
- /* Listen for typing events
-useEffect(() => {
-  let typingTimeout;
-
-  socket.on('usertyping', (data) => {
-   
-    setTyping(data.status);
-
-    // Clear typing status after 3 seconds (adjust as needed)
-    clearTimeout(typingTimeout);
-    typingTimeout = setTimeout(() => {
-      setTyping("");
-    }, 2000);
-  });
-
-  return () => {
-    socket.off('typing');
-    clearTimeout(typingTimeout);
-  };
-}, [socket]);*/
 
   return (
+    <>
+    
     <div className="chat-window">
-      <>
+     
         <div className="head">
           <table>
             <tr>
@@ -105,8 +85,6 @@ useEffect(() => {
             </tr>
           </table>
         </div>
-
-        
         <div className="body">
        
           <ScrollToBottom className="message-scroll">
@@ -128,7 +106,7 @@ useEffect(() => {
                </ScrollToBottom>
         </div>
         
-      </>
+      
 
       <div className="footer">
         <table>
@@ -138,7 +116,7 @@ useEffect(() => {
               <input
                 type="text"
                 value={currentMessage}
-                placeholder="Type message..."
+                placeholder="Type message... "
                 onChange={(event) =>{
                   setCurrentMessage(event.target.value)
                   handleTyping(event)
@@ -156,6 +134,7 @@ useEffect(() => {
         </table>
       </div>
     </div>
+    </>
   );
 };
 

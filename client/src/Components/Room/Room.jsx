@@ -3,7 +3,7 @@ import io from 'socket.io-client'
 import './Room.css'
 import Chat from "../Chat/Chat"
 
-const socket = io.connect("http://192.168.170.66:5000")
+const socket = io.connect("http://localhost:5000")
 
 const Room = () => {
  
@@ -22,7 +22,7 @@ const Room = () => {
             {! showChat ? (
       <div className='joinChat'>
       <h3>Join a chat</h3>
-      <input type='text' placeholder='John...' onChange={(event) => {setUsername(event.target.value)}}/> <br/><br/>
+      <input type='text' placeholder='Username...' onChange={(event) => {setUsername(event.target.value)}}/> <br/><br/>
       <input type='text' placeholder='Room id...' onChange={(event) => {setRoom(event.target.value)}} onKeyDown={(event) => {
                   event.key === "Enter" && joinRoom();
                 }}/><br/><br/>
