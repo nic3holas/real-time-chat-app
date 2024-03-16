@@ -12,6 +12,8 @@ const Achat = ({asocket,room,username}) => {
  const[currentMessage, setCurrentMessage] = useState("")
  const[messageList, setMessageList] = useState([])
  const[typing, setTyping]= useState("")
+ const [lastSeen, setLastSeen] = useState('');
+ const [isVisible, setIsVisible] = useState(false);
 
  // In your React component
 const handleTyping = (event) => {
@@ -44,6 +46,16 @@ const handleTyping = (event) => {
       setMessageList((list)=>[...list, data])
     console.log(data)
     })
+    asocket.on('last_seen', (data) => {
+      console.log(data.username + ' is online');
+      setLastSeen(data.username + ' is online');
+      setIsVisible(true);
+      const timing = setTimeout(() => {
+        setIsVisible(false);
+      }, 2000);
+
+      return () => clearTimeout(timing);
+    });
 
   },[asocket])
 
@@ -86,7 +98,13 @@ const handleTyping = (event) => {
         </div>
 
         <div className="abody">
-        
+
+        {isVisible && (
+            <div className="online-status w3-panel w3-gray">
+              <span>{lastSeen}</span>
+            </div>
+          )}
+
           <ScrollToBottom className="amessage-scroll">
         {messageList.map((messageContent, index) => (
               <div

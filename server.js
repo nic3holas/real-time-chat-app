@@ -23,7 +23,11 @@ io.on("connection", (socket)=> {
     socket.join(data)
     console.log(`User with Id ${socket.id} joined room ${data}`)
   })
-
+  //send online status ot others
+  socket.on("last_seen",(data)=>{
+    console.log(data.username + " is online")
+    socket.to(data.room).emit("last_seen", data)
+  })
   //send message to connected users within the room
   socket.on("send_message",(data) =>{
     console.log(`User ${data.author} sent message ${data.message} at ${data.time}`)
@@ -53,5 +57,5 @@ socket.on('stop_typing', (data) => {
 
 const PORT = process.env.PORT || 5000
 server.listen(PORT,() => {
-  console.log(`Server is running on http://192.168.182.74:${PORT}`)
+  console.log(`Server is running on http://localhost:${PORT}`)
 })

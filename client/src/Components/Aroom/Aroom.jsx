@@ -14,6 +14,7 @@ const Aroom = () => {
     const joinRoom = () => {
         if (username !== "" && room !== "") {
           asocket.emit("join_room", room)
+          asocket.emit("last_seen", {username,room})
           setShowChat(true)
         }
       }

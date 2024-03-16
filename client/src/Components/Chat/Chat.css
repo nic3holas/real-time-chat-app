@@ -97,6 +97,14 @@ tr .sender-icon{
 .back-icon{
     width: 30px;
 }
+.online-status{
+    width: 15%;
+    border-radius: 12px;
+    margin-left: 40%;
+    z-index: 1000;
+    padding-left: 30px;
+    transition: opacity 0.5s ease-in-out;
+}
 @media screen and (max-width:480px) {
     .sender h2{
         font-size: 20px;
